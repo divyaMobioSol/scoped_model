@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:scope_model/scope_models/home_model.dart';
 import 'package:scope_model/service_locator.dart';
-import 'package:scope_model/ui/home_view.dart';
+
 import 'package:scoped_model/scoped_model.dart';
 
-import 'homepage.dart';
-import 'model.dart';
+import 'ui/homepage.dart';
 
 void main() {
   setUplocator();
@@ -17,14 +17,14 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return ScopedModel<Cart>(
-      model: Cart(),
+    return ScopedModel<homeModel>(
+      model: homeModel(),
       child: MaterialApp(
         title: 'Flutter Demo',
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: HomeView(),
+        home: MyHomePage(),
       ),
     );
   }
